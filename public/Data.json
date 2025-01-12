@@ -12,12 +12,26 @@
         {
           "day": "Sun",
           "time": "4:10PM - 5:30PM",
-          "room": "PA210"
+          "room": "PA210",
+          "section" : 1
         },
         {
           "day": "Tue",
           "time": "4:10PM - 5:30PM",
-          "room": "PB107"
+          "room": "PA207",
+          "section" : 1
+        },
+        {
+          "day": "sat",
+          "time": "4:10PM - 5:30PM",
+          "room": "PA207",
+          "section" : 2
+        },
+        {
+          "day": "sat",
+          "time": "4:10PM - 5:30PM",
+          "room": "PA207",
+          "section" : 3
         }
       ]
     },
