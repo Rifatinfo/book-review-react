@@ -2,70 +2,84 @@ import React, { useState } from "react";
 
 const Schedule = ({ selectedSubject }) => {
   const [selectedData, setSelectedData] = useState([]);
-  const [selectedScheduleAppend, setSelectedScheduleAppend] = useState();
+  const [selectedScheduleAppend, setSelectedScheduleAppend] = useState([]);
   const handleScheduleData = (sub) => {
     setSelectedData(sub);
   };
-  const handleAppend = (data) =>{
-    console.log(data);
-  }
+  const handleAppend = (data) => {
+    setSelectedScheduleAppend((prev) => {
+      // Add only unique entries based on a unique identifier like 'section'
+      const uniqueData = data.filter(
+        (newEntry) => !prev.some((existingEntry) => existingEntry.section === newEntry.section)
+      );
+      return [...prev, ...uniqueData];
+    });
+  };
+  
+  console.log(selectedScheduleAppend);
+  
   return (
     <div>
       <div>
         <div>
           <div className="mt-32 flex justify-center mb-16">
             <div className="overflow-x-auto">
-              <table className="min-w-full table-auto border-collapse border border-gray-300">
-                <thead>
-                  <tr className="bg-gray-200 text-gray-700">
-                    <th className="border border-gray-300 px-4 py-2 text-left">
-                      Course ID
-                    </th>
-                    <th className="border border-gray-300 px-4 py-2 text-left">
-                      Course Name
-                    </th>
-                    <th className="border border-gray-300 px-4 py-2 text-left">
-                      Section
-                    </th>
-                    <th className="border border-gray-300 px-4 py-2 text-left">
-                      Day
-                    </th>
-                    <th className="border border-gray-300 px-4 py-2 text-left">
-                      Time
-                    </th>
-                    <th className="border border-gray-300 px-4 py-2 text-left">
-                      Room No
-                    </th>
-                    <th className="border border-gray-300 px-4 py-2 text-left"></th>
-                  </tr>
-                </thead>
-                <tbody id="IdCourseContainer">
-                  {selectedSubject.map((selectedSub) => (
-                    <>
-                      <tr>
-                        <td className="border border-gray-300 px-4 py-2">
-                          {selectedSub.course_id}
-                        </td>
-                        <td className="border border-gray-300 px-4 py-2">
-                          {selectedSub.course_name}
-                        </td>
-                        <td className="border border-gray-300 px-4 py-2"></td>
-                        <td className="border border-gray-300 px-4 py-2"></td>
-                        <td className="border border-gray-300 px-4 py-2"></td>
-                        <td className="border border-gray-300 px-4 py-2"></td>
-                        <td
-                          onClick={() =>
-                            handleScheduleData(selectedSub.schedule)
-                          }
-                          className="border border-gray-300 px-4 py-2 text-gray-500 hover:underline font-semibold cursor-pointer"
-                        >
-                          Select
-                        </td>
-                      </tr>
-                    </>
-                  ))}
-                </tbody>
-              </table>
+            <table className="min-w-full table-auto border-collapse border border-gray-300">
+  <thead>
+    <tr className="bg-gray-200 text-gray-700">
+      <th className="border border-gray-300 px-4 py-2 text-left">Course ID</th>
+      <th className="border border-gray-300 px-4 py-2 text-left">Course Name</th>
+      <th className="border border-gray-300 px-4 py-2 text-left">Section</th>
+      <th className="border border-gray-300 px-4 py-2 text-left">Day</th>
+      <th className="border border-gray-300 px-4 py-2 text-left">Time</th>
+      <th className="border border-gray-300 px-4 py-2 text-left">Room No</th>
+      <th className="border border-gray-300 px-4 py-2 text-left"></th>
+    </tr>
+  </thead>
+  <tbody id="IdCourseContainer">
+    {selectedSubject.map((selectedSub, index) => (
+      <tr key={index}>
+        <td className="border border-gray-300 px-4 py-2">{selectedSub.course_id}</td>
+        <td className="border border-gray-300 px-4 py-2">{selectedSub.course_name}</td>
+        
+        {/* Render selected schedule data if it exists */}
+        {selectedScheduleAppend.length !== 0 ? (
+          <>
+            <td className="border border-gray-300 px-4 py-2">
+              {selectedScheduleAppend[index]?.section || ''}
+            </td>
+            <td className="border border-gray-300 px-4 py-2">
+              {selectedScheduleAppend[index]?.day || ''}
+            </td>
+            <td className="border border-gray-300 px-4 py-2">
+              {selectedScheduleAppend[index]?.time || ''}
+            </td>
+            <td className="border border-gray-300 px-4 py-2">
+              {/* Debugging step: Check the room_no field */}
+              {selectedScheduleAppend[index]?.room ? selectedScheduleAppend[index].room : ''}
+            </td>
+          </>
+        ) : (
+          <>
+            <td className="border border-gray-300 px-4 py-2"></td>
+            <td className="border border-gray-300 px-4 py-2"></td>
+            <td className="border border-gray-300 px-4 py-2"></td>
+            <td className="border border-gray-300 px-4 py-2"></td>
+          </>
+        )}
+        
+        <td
+          onClick={() => handleScheduleData(selectedSub.schedule)}
+          className="border border-gray-300 px-4 py-2 text-gray-500 hover:underline font-semibold cursor-pointer"
+        >
+          Select
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+
             </div>
           </div>
         </div>
