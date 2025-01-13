@@ -7,7 +7,6 @@
       "mandatory": "no",
       "taken_right": "https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_1280.png",
       "taken_close": "https://cdn-icons-png.flaticon.com/512/1828/1828665.png",
-      "section": "1",
       "schedule": [
         {
           "day": "Sun",
@@ -19,12 +18,6 @@
           "day": "Tue",
           "time": "4:10PM - 5:30PM",
           "room": "PA207",
-          "section" : 1
-        },
-        {
-          "day": "sat",
-          "time": "4:10PM - 5:30PM",
-          "room": "PA207",
           "section" : 2
         },
         {
@@ -32,6 +25,12 @@
           "time": "4:10PM - 5:30PM",
           "room": "PA207",
           "section" : 3
+        },
+        {
+          "day": "sat",
+          "time": "4:10PM - 5:30PM",
+          "room": "PA207",
+          "section" : 4
         }
       ]
     },
@@ -43,17 +42,18 @@
       "mandatory": "no",
       "taken_right": "https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_1280.png",
       "taken_close": "https://cdn-icons-png.flaticon.com/512/1828/1828665.png",
-      "section": "1",
       "schedule": [
         {
           "day": "Sun",
           "time": "4:10PM - 5:30PM",
-          "room": "PA210"
+          "room": "PA210",
+          "section" : 5
         },
         {
           "day": "Tue",
           "time": "4:10PM - 5:30PM",
-          "room": "PB107"
+          "room": "PB107",
+          "section" : 6
         }
       ]
     },
@@ -65,17 +65,18 @@
       "mandatory": "no",
       "taken_right": "https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_1280.png",
       "taken_close": "https://cdn-icons-png.flaticon.com/512/1828/1828665.png",
-      "section": "2",
       "schedule": [
         {
           "day": "Mon",
           "time": "10:00AM - 11:30AM",
-          "room": "PC301"
+          "room": "PC301",
+          "section" : 7
         },
         {
           "day": "Wed",
           "time": "10:00AM - 11:30AM",
-          "room": "PC301"
+          "room": "PC301",
+          "section" : 8
         }
       ]
     },
@@ -87,12 +88,12 @@
       "mandatory": "no",
       "taken_right": "https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_1280.png",
       "taken_close": "https://cdn-icons-png.flaticon.com/512/1828/1828665.png",
-      "section": "2",
       "schedule": [
         {
           "day": "Thu",
           "time": "2:00PM - 4:00PM",
-          "room": "Lab-102"
+          "room": "Lab-102",
+          "section" : 9
         }
       ]
     },
@@ -104,17 +105,18 @@
       "mandatory": "no",
       "taken_right": "https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_1280.png",
       "taken_close": "https://cdn-icons-png.flaticon.com/512/1828/1828665.png",
-      "section": "3",
       "schedule": [
         {
           "day": "Sun",
           "time": "1:30PM - 3:00PM",
-          "room": "PB205"
+          "room": "PB205",
+          "section" : 10
         },
         {
           "day": "Tue",
           "time": "1:30PM - 3:00PM",
-          "room": "PB205"
+          "room": "PB205",
+          "section" : 11
         }
       ]
     },
@@ -126,17 +128,18 @@
       "mandatory": "no",
       "taken_right": "https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_1280.png",
       "taken_close": "https://cdn-icons-png.flaticon.com/512/1828/1828665.png",
-      "section": "3",
       "schedule": [
         {
           "day": "Mon",
           "time": "8:00AM - 9:30AM",
-          "room": "PA108"
+          "room": "PA108",
+          "section" : 12
         },
         {
           "day": "Wed",
           "time": "8:00AM - 9:30AM",
-          "room": "PA108"
+          "room": "PA108",
+          "section" : 13
         }
       ]
     },
@@ -148,12 +151,30 @@
       "mandatory": "no",
       "taken_right": "https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_1280.png",
       "taken_close": "https://cdn-icons-png.flaticon.com/512/1828/1828665.png",
-      "section": "1",
       "schedule": [
         {
           "day": "Thu",
           "time": "12:00PM - 1:30PM",
-          "room": "PB104"
+          "room": "PB104",
+          "section" : 14
+        },
+        {
+          "day": "mon",
+          "time": "12:00PM - 1:30PM",
+          "room": "PB114",
+          "section" : 15
+        },
+        {
+          "day": "Thu",
+          "time": "12:00PM - 1:30PM",
+          "room": "PB100",
+          "section" : 16
+        },
+        {
+          "day": "sun",
+          "time": "12:00PM - 1:30PM",
+          "room": "PB104",
+          "section" : 17
         }
       ]
     }
